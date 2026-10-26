@@ -1,0 +1,201 @@
+css #root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 700px;
+  margin: 50px auto;
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.cabecalho {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.cabecalho h1 {
+  color: #14213d;
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.cabecalho p {
+  color: #64748b;
+  font-size: 16px;
+}
+
+.formulario,
+.lista-tarefas {
+  margin-bottom: 30px;
+}
+
+.formulario h2,
+.lista-tarefas h2 {
+  color: #14213d;
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+.formulario form {
+  display: flex;
+  gap: 10px;
+}
+
+.formulario input {
+  flex: 1;
+  padding: 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font-size: 15px;
+}
+
+.formulario button {
+  padding: 12px 20px;
+  background-color: #14213d;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.formulario button:hover {
+  background-color: #243b64;
+}
+
+.mensagem-vazia {
+  color: #64748b;
+  text-align: center;
+  padding: 20px;
+  background-color: #f8fafc;
+  border-radius: 6px;
+}
+
+@media (max-width: 600px) {
+  .container {
+    margin: 20px 12px;
+    padding: 20px;
+  }
+
+  .cabecalho h1 {
+    font-size: 26px;
+  }
+
+  .formulario form {
+    flex-direction: column;
+  }
+
+  .formulario button {
+    width: 100%;
+  }
+  .resumo-tarefas {
+    gap: 6px;
+  }
+
+  .resumo-tarefas p {
+    padding: 10px 3px;
+    font-size: 13px;
+  }
+
+  .resumo-tarefas strong {
+    font-size: 20px;
+  }
+}
+.lista-tarefas ul {
+  list-style: none;
+  padding: 0;
+}
+
+.lista-tarefas li {
+  padding: 12px;
+  margin-bottom: 10px;
+  background-color: #f8fafc;
+  border-radius: 6px;
+}
+
+.lista-tarefas li label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.lista-tarefas li input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+.concluida {
+  color: #64748b;
+  text-decoration: line-through;
+}
+.lista-tarefas li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.botao-excluir {
+  padding: 6px 10px;
+  color: #ffffff;
+  background-color: #dc2626;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.botao-excluir:hover {
+  background-color: #b91c1c;
+}
+.filtros {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.filtros button {
+  padding: 8px 14px;
+  background-color: #e2e8f0;
+  color: #14213d;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.filtros button:hover {
+  background-color: #cbd5e1;
+}
+
+.filtros button.filtro-ativo {
+  background-color: #14213d;
+  color: #ffffff;
+}
+.resumo-tarefas {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.resumo-tarefas p {
+  flex: 1;
+  margin: 0;
+  padding: 12px 5px;
+  text-align: center;
+  background-color: #f1f5f9;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+}
+
+.resumo-tarefas strong {
+  display: block;
+  margin-top: 5px;
+  color: #14213d;
+  font-size: 22px;
+}
