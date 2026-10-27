@@ -78,6 +78,12 @@ function App() {
   return (
     <main className="container">
       <header className="cabecalho">
+        <img
+          src="/gerenciador-tarefas/logo.png"
+          alt="Logo do Gerenciador de Tarefas"
+          className="logo"
+        />
+
         <h1>Gerenciador de Tarefas</h1>
         <p>Organize suas tarefas e acompanhe seu progresso.</p>
       </header>
