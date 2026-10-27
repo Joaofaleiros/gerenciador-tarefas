@@ -9,6 +9,8 @@ function App() {
   });
   const [titulo, setTitulo] = useState("");
   const [filtro, setFiltro] = useState("todas");
+  const [idEmEdicao, setIdEmEdicao] = useState(null);
+
   useEffect(() => {
     localStorage.setItem("tarefas", JSON.stringify(tarefas));
   }, [tarefas]);
@@ -37,6 +39,25 @@ function App() {
   function excluirTarefa(id) {
     setTarefas(tarefas.filter((tarefa) => tarefa.id !== id));
   }
+
+  function editarTarefa(id) {
+    const tarefaSelecionada = tarefas.find((tarefa) => tarefa.id === id);
+
+    if (tarefaSelecionada) {
+      setTitulo(tarefaSelecionada.titulo);
+      setIdEmEdicao(id);
+    }
+  }
+  function salvarEdicao() {
+    setTarefas(
+      tarefas.map((tarefa) =>
+        tarefa.id === idEmEdicao ? { ...tarefa, titulo: titulo } : tarefa,
+      ),
+    );
+
+    setTitulo("");
+    setIdEmEdicao(null);
+  }
   const totalTarefas = tarefas.length;
 
   const tarefasConcluidas = tarefas.filter((tarefa) => tarefa.concluida).length;
@@ -64,14 +85,27 @@ function App() {
       <section className="formulario">
         <h2>Adicionar tarefa</h2>
 
-        <form onSubmit={adicionarTarefa}>
+        <form
+          onSubmit={(event) => {
+            event.preventDefault();
+
+            if (idEmEdicao !== null) {
+              salvarEdicao();
+            } else {
+              adicionarTarefa(event);
+            }
+          }}
+        >
           <input
             type="text"
             placeholder="Digite o nome da tarefa..."
             value={titulo}
             onChange={(event) => setTitulo(event.target.value)}
           />
-          <button type="submit">Adicionar</button>
+
+          <button type="submit">
+            {idEmEdicao !== null ? "Salvar edição" : "Adicionar"}
+          </button>
         </form>
       </section>
 
@@ -132,7 +166,13 @@ function App() {
                     {tarefa.titulo}
                   </span>
                 </label>
-
+                <button
+                  type="button"
+                  className="botao-editar"
+                  onClick={() => editarTarefa(tarefa.id)}
+                >
+                  Editar
+                </button>
                 <button
                   type="button"
                   className="botao-excluir"

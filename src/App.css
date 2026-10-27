@@ -61,6 +61,14 @@ css #root {
   border-radius: 6px;
   cursor: pointer;
   font-size: 15px;
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.formulario button:hover {
+  background-color: #243b64;
+  transform: translateY(-1px);
 }
 
 .formulario button:hover {
@@ -111,10 +119,20 @@ css #root {
 }
 
 .lista-tarefas li {
-  padding: 12px;
-  margin-bottom: 10px;
-  background-color: #f8fafc;
-  border-radius: 6px;
+  padding: 15px;
+  margin-bottom: 12px;
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.04);
+  transition:
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.lista-tarefas li:hover {
+  border-color: #cbd5e1;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
 }
 
 .lista-tarefas li label {
@@ -136,9 +154,17 @@ css #root {
 }
 .lista-tarefas li {
   display: flex;
-  justify-content: space-between;
   align-items: center;
   gap: 10px;
+}
+
+.lista-tarefas li label {
+  flex: 1;
+  min-width: 0;
+}
+
+.lista-tarefas li button {
+  flex-shrink: 0;
 }
 
 .botao-excluir {
@@ -148,10 +174,35 @@ css #root {
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
 }
 
 .botao-excluir:hover {
   background-color: #b91c1c;
+  transform: translateY(-1px);
+}
+
+.botao-editar {
+  padding: 6px 10px;
+  color: #ffffff;
+  background-color: #14213d;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.botao-editar:hover {
+  background-color: #243b64;
+  transform: translateY(-1px);
+}
+
+.botao-editar:hover {
+  background-color: #1d4ed8;
 }
 .filtros {
   display: flex;
@@ -167,30 +218,47 @@ css #root {
   border: none;
   border-radius: 6px;
   cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
 }
 
 .filtros button:hover {
   background-color: #cbd5e1;
+  transform: translateY(-1px);
 }
 
 .filtros button.filtro-ativo {
   background-color: #14213d;
   color: #ffffff;
 }
+
+.filtros button.filtro-ativo:hover {
+  background-color: #243b64;
+}
 .resumo-tarefas {
   display: flex;
-  gap: 10px;
+  gap: 12px;
   margin-bottom: 20px;
 }
 
 .resumo-tarefas p {
   flex: 1;
   margin: 0;
-  padding: 12px 5px;
+  padding: 15px 8px;
   text-align: center;
-  background-color: #f1f5f9;
+  background-color: #ffffff;
   border: 1px solid #e2e8f0;
-  border-radius: 8px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.04);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.resumo-tarefas p:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
 }
 
 .resumo-tarefas strong {
